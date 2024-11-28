@@ -21,6 +21,8 @@ public class CalendrierAnnuel {
         this.mois[11] = new Mois("DÃ©cembre", 31);
 	}
 	
+	
+	
 	public boolean estLibre(int jour, int moi) {
 		return mois[moi-1].estLibre(jour);
 	}
@@ -49,10 +51,12 @@ public class CalendrierAnnuel {
 		
 		 boolean reserver(int jour) {
 			if(!estLibre(jour)) {
-				throw new IllegalStateException("Le jour choisi n'est pas disponible \n");
+				throw new IllegalStateException("reservation du 20/10 ne devrait pas être possible");
 				
 			}
-			return estLibre(jour);
+			jours[jour -1] = false;
+			return true;
+			
 		}
 		
 		
